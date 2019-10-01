@@ -1,0 +1,12 @@
+<div class="col s12 m6 l4">
+  <div class="card yellow lighten-3 brown-text">
+    <div class="card-content">
+        <p class=""><%=tweet.text%></p>
+        <div class="author"><span class="right">--<a href="#" class=" red-text text-darken-3"><%= tweet.user.nickname%></a></span></div>
+      </div>
+      <div class="card-action">
+     <span class="left">category：</span>
+        <a href="#"><%= tweet.genre.genrename %> </a>
+    </div>
+  </div> 
+</div>
