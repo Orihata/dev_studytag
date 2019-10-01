@@ -11,3 +11,9 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+#tweet_genre_id{
+  display:block;
+  height:50px;
+
+}

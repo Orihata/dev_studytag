@@ -69,4 +69,8 @@ gem 'material_icons'
 gem 'kaminari'
 gem 'devise'
 gem "jquery-rails"
-
+group :development, :test do
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-doc'
+end

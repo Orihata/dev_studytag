@@ -1,0 +1,11 @@
+<div class="row">
+<h2 class="">Create New TAG</h2>
+
+<%= form_with model: Tweet.new do |f| %>
+  <%= f.text_field :text %>
+  <%= f.collection_select :genre_id, @genre, :id, :genre_name %> 
+  <%= f.submit :class=>"btn  waves-effect waves-light orange darken-4 white-text"%>
+<% end %>
+
+
+</div>
