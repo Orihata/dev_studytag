@@ -7,14 +7,14 @@
 
     <div class="card-action">
      <span class="left">category：</span>
-        <a href="#"><%= tweet.genre.genre_name %> </a>
-    <ul class="more_list right flex">
-          <li><span class="btn-floating btn-small waves-effect waves-light brown "> <%= link_to content_tag(:i, 'add', class: 'material-icons large'), "tweets/#{tweet.id}", method: :get %></span></li>
+        <a href="#" class="truncate"><%= tweet.genre.genre_name %> </a>
+    <div class="more_list right flex">
+          <%= link_to content_tag(:i, 'loupe', class: 'material-icons large'), "tweets/#{tweet.id}",:class=>"btn-floating btn-small waves-effect waves-light brown", method: :get %>
             <% if user_signed_in? && current_user.id == tweet.user_id %>
-          <li><span class="btn-floating btn-small waves-effect waves-light brown "> <%= link_to content_tag(:i, 'edit', class: 'material-icons'), "tweets/#{tweet.id}/edit", method: :get %></span></li>
-          <li><span class="btn-floating btn-small waves-effect waves-light brown "> <%= link_to content_tag(:i, 'delete', class: 'material-icons'), "tweets/#{tweet.id}", method: :delete %></span></li>
+          <%= link_to content_tag(:i, 'edit', class: 'material-icons'), "tweets/#{tweet.id}/edit",:class=>"btn-floating btn-small waves-effect waves-light brown", method: :get %>
+          <%= link_to content_tag(:i, 'delete', class: 'material-icons'), "tweets/#{tweet.id}",:class=>"btn-floating btn-small waves-effect waves-light red", method: :delete %>
             <% end %>
-        </ul>
+        </div>
     </div>
   </div> 
 </div>

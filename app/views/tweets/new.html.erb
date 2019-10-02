@@ -1,5 +1,6 @@
 <div class="row">
 <h4>Create New TAG</h4>
+<div class="col s12">
 <div class="card yellow lighten-3 brown-text">
 <div class="card-content">
   <%= form_with model: Tweet.new , local:true do |f| %>
@@ -10,6 +11,7 @@
   <%= f.collection_select :genre_id, @genre, :id, :genre_name %> 
   <%= f.submit "SUBMIT TAG!", :class =>"btn brown darken-3 white-text btnoption"%>
 <% end %>
+</div>
 </div>
 </div>
 </div>
