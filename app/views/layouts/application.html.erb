@@ -4,7 +4,7 @@
     <title>StudyTAG</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application'%>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -17,14 +17,14 @@
   <body>
   <header>
     <nav class="header">
-      <div class="nav-wrapper orange darken-4 white-text">
+      <div class="nav-wrapper white-text">
         <a href="#" class="sidenav-trigger" data-target="mobile-links"><i class="material-icons">menu</i></a>
-        <a href="#" class="brand-logo center">StudyTAG</a>
+        <a href="/tweets" class="brand-logo center">StudyTAG<%="::" + current_user.nickname if user_signed_in?%></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="#">What's StudyTag?</a></li>
           <% if user_signed_in? %>
           <li><%= link_to "sign out", destroy_user_session_path, method: :delete %></li>
-          <li><a href="/tweets/new">New Post</a></li>
+          <li class="yellow"><a href="/tweets/new" class=" brown-text">Create New TAG</a></li>
           <% else %>
           <li><%= link_to "sign in", new_user_session_path %></li>
           <li><%= link_to "Sign up", new_user_registration_path %></li>
@@ -38,15 +38,15 @@
           <li><a href="#">What's StudyTag?</a></li>
           <%if user_signed_in? %>
           <li><%= link_to "sign out", destroy_user_session_path, method: :delete %></li>
-          <li><a href="#">New Post</a></li>
+          <li class="yellow"><a href="/tweets/new" class="brown-text">Create New TAG</a></li>
           <%else%>
-          <li><%= link_to "sign in", new_user_session_path %><</li>
-          <li><%= link_to "Sign up", new_user_registration_path %><</li>
+          <li><%= link_to "sign in", new_user_session_path %></li>
+          <li><%= link_to "Sign up", new_user_registration_path %></li>
           <% end %>
   </ul>
 
   </header>
-    <div class="content container">
+    <div class="content container z-depth-2">
       <%= yield %>
     </div>
 

@@ -4,9 +4,17 @@
         <p class=""><%=tweet.text%></p>
         <div class="author"><span class="right">--<a href="#" class=" red-text text-darken-3"><%= tweet.user.nickname%></a></span></div>
       </div>
-      <div class="card-action">
+
+    <div class="card-action">
      <span class="left">category：</span>
         <a href="#"><%= tweet.genre.genre_name %> </a>
+    <ul class="more_list right flex">
+          <li><span class="btn-floating btn-small waves-effect waves-light brown "> <%= link_to content_tag(:i, 'add', class: 'material-icons large'), "tweets/#{tweet.id}", method: :get %></span></li>
+            <% if user_signed_in? && current_user.id == tweet.user_id %>
+          <li><span class="btn-floating btn-small waves-effect waves-light brown "> <%= link_to content_tag(:i, 'edit', class: 'material-icons'), "tweets/#{tweet.id}/edit", method: :get %></span></li>
+          <li><span class="btn-floating btn-small waves-effect waves-light brown "> <%= link_to content_tag(:i, 'delete', class: 'material-icons'), "tweets/#{tweet.id}", method: :delete %></span></li>
+            <% end %>
+        </ul>
     </div>
   </div> 
 </div>

@@ -10,8 +10,11 @@ before_action :move_to_index, except: [:index, :show]
   end
 
   def create
-    binding.pry
     Tweet.create(text: tweet_params[:text], genre_id: tweet_params[:genre_id], user_id:current_user.id)
+  end
+
+  def edit
+    @tweet = Tweet.find(params[:id])
   end
 
 
