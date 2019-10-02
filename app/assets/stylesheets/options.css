@@ -57,7 +57,8 @@ textarea{
 
 
 .pagination{
-  background-color:#d7afa8
+  background-color:#d7afa8;
+  width:100%;
 }
 
 .more_list{

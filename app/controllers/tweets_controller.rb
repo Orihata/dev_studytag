@@ -26,6 +26,7 @@ before_action :move_to_index, except: [:index, :show]
   def update
     tweet = Tweet.find(params[:id])
     tweet.update(tweet_params) if tweet.user_id == current_user.id
+    redirect_to action: :index
   end
 
   def destroy
