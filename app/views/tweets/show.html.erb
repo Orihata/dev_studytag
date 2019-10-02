@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col s12">
+    <div class="card yellow lighten-3 brown-text">
+      <div class="card-title">
+        <h4>~<%=@tweet.user.nickname%>'s TAG about <%=@tweet.genre.genre_name%>~</h4>
+      </div>
+      <div class="card-content">
+        <h5><%=@tweet.text%></h5>
+      </div>
+      <div class="card-action">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pagination white-text">
+<h4 class="center">See more <%=@tweet.user.nickname %>'s TAGs</h4>
+</div>
+
+<div class="row">
+<%@userstweets.each do |tweet|%>
+  <%= render partial: "tweets-2" , locals: { tweet: tweet  }%>
+<%end%>
+</div>
+<nav class="pagination"></nav>

@@ -2,8 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'tweets#index'
+
   resources :tweets do
-    resources :favorites
+    resources :favorites , only: [:create, :destroy]
   end
   resources :genres
+  resources :users do
+    resources :favorites , only: [:show]
+  end
 end
