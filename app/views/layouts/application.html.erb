@@ -19,7 +19,7 @@
     <nav class="header fixed">
       <div class="nav-wrapper white-text">
         <a href="#" class="sidenav-trigger" data-target="mobile-links"><i class="material-icons">menu</i></a>
-        <a href="/tweets" class="brand-logo center">StudyTAG<%="::" + current_user.nickname if user_signed_in?%></a>
+        <a href="/tweets" class="brand-logo center truncate">StudyTAG<%="::" + current_user.nickname if user_signed_in?%></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="#">What's StudyTag?</a></li>
           <% if user_signed_in? %>
@@ -34,6 +34,7 @@
       </div>
     </nav>
 
+
   <ul class="sidenav" id="mobile-links">
           <li><a href="#">What's StudyTag?</a></li>
           <%if user_signed_in? %>
@@ -45,10 +46,14 @@
           <% end %>
   </ul>
 
+
   </header>
+
+
     <div class="content container z-depth-2">
       <%= yield %>
     </div>
+
   </body>
 
 </html>

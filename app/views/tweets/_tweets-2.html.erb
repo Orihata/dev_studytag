@@ -2,12 +2,12 @@
   <div class="card yellow lighten-3 brown-text">
     <div class="card-content">
         <p class=""><%=tweet.text%></p>
-        <div class="author"><span class="right">--<a href="#" class=" red-text text-darken-3"><%= tweet.user.nickname%></a></span></div>
+        <div class="author"><span class="right">--<span class=" red-text text-darken-3"><%= tweet.user.nickname%></span></span></div>
         </div>
 
       <div class="card-action">
      <span class="left">category：</span>
-        <a href="#" class="truncate"><%= tweet.genre.genre_name %> </a>
+        <span class="truncate"><%= tweet.genre.genre_name %> </span>
     </div>
   </div> 
 </div>

@@ -4,3 +4,9 @@
   <%end%>
     <%= paginate @tweets %>
   </div>
+
+  <%if user_signed_in?%>
+    <div class="tweet hide-on-large-only">
+      <%= link_to content_tag(:i, 'create', class: 'material-icons large brown-text'), "tweets/new",:class=>"btn-floating btn-large waves-effect pulse waves-light yellow accent-2", method: :get %>
+    </div>
+<%end%>
