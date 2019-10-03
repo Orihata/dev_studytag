@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
 before_action :move_to_index, except: [:index, :show]
 
   def index
-    @tweets = Tweet.includes(:user,:genre).order("id DESC").page(params[:page]).per(12)
+    @tweets = Tweet.includes(:user, :genre).order("id DESC").page(params[:page]).per(12)
   end
 
   def new
@@ -15,7 +15,7 @@ before_action :move_to_index, except: [:index, :show]
 
   def show
     @tweet = Tweet.find(params[:id])
-    @userstweets = Tweet.where(user_id: @tweet.user_id).order("id DESC").limit(6)
+    @userstweets = Tweet.includes(:user, :genre).where(user_id: @tweet.user_id).order("id DESC").limit(6)
   end
 
   def edit
