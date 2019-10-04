@@ -19,7 +19,7 @@
 </div>
 
 <div class="row">
-<%@genre.tweets.each do |tweet|%>
+<%@tweets.each do |tweet|%>
   <%= render partial: "tweets/tweets-2" , locals: { tweet: tweet }%>
 <%end%>
 </div>
