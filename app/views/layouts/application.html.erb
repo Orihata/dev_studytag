@@ -21,7 +21,7 @@
         <a href="#" class="sidenav-trigger" data-target="mobile-links"><i class="material-icons">menu</i></a>
         <a href="/tweets" class="brand-logo center truncate">StudyTAG<%="::" + current_user.nickname if user_signed_in?%></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="#">What's StudyTag?</a></li>
+          <li><a href="/tweets/readme">What's StudyTag?</a></li>
           <% if user_signed_in? %>
           <li><%= link_to "sign out", destroy_user_session_path, method: :delete %></li>
           <li class="yellow"><a href="/tweets/new" class=" brown-text">Create New TAG</a></li>
@@ -36,7 +36,7 @@
 
 
   <ul class="sidenav" id="mobile-links">
-          <li><a href="#">What's StudyTag?</a></li>
+          <li><a href="/tweets/readme">What's StudyTag?</a></li>
           <%if user_signed_in? %>
           <li><%= link_to "sign out", destroy_user_session_path, method: :delete %></li>
           <li class="yellow"><a href="/tweets/new" class="brown-text">Create New TAG</a></li>

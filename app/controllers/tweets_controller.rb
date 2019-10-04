@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-before_action :move_to_index, except: [:index, :show]
+before_action :move_to_index, except: [:index, :show, :readme]
 
   def index
     @tweets = Tweet.includes(:user, :genre).order("id DESC").page(params[:page]).per(12)
@@ -21,6 +21,9 @@ before_action :move_to_index, except: [:index, :show]
   def edit
     @tweet = Tweet.find(params[:id])
     @genre = Genre.all
+  end
+
+  def readme
   end
 
   def update
